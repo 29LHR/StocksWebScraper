@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ ticker }} Stock Data</title>
+</head>
+
+<body>
+    <h1>Stocks Data</h1>
+    <div class="pre">
+        {% for ticker in tickers %}
+        <a href="/{{ticker.lower()}}">{{ticker.upper()}}</a>
+        {% endfor %}
+    </div>
+
+    <form action="{{ url_for('redirectF') }}" method="post">
+        <label for="tickerIn">Ticker: </label>
+        <input type="text" id="tickerIn" , name="tickerIn">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
